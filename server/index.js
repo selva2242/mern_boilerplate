@@ -24,6 +24,8 @@ app.post("/api/user/registration", (req, res)=>{
 
 app.post("/api/user/login", (req, res)=>{
     //compare email             
+    console.log(req.body.email)
+    console.log(req.body.password)
     User.findOne({email: req.body.email}, function(err, user){
         if(!user)
             return res.json({
